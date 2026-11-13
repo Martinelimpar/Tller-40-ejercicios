@@ -72,9 +72,9 @@ public class Main {
     // 2. Imprimir Hola y luego el nombre en la misma línea
     static void ejercicio2() {
         System.out.println("\n--- Ejercicio 2 ---");
-        String nombre = "Martin"; // pon aquí tu nombre
-        System.out.print("Hola "); // print NO salta de línea
-        System.out.println(nombre); // println sí salta de línea
+        String nombre = "Martin";
+        System.out.print("Hola ");
+        System.out.println(nombre);
     }
 
     // 3. Cuadrado de un número
@@ -109,7 +109,7 @@ public class Main {
         if (b == 0) {
             System.out.println("División y residuo: no se puede dividir entre 0");
         } else {
-            System.out.println("División: " + ((double) a / b)); // (double) para no perder decimales
+            System.out.println("División: " + ((double) a / b));
             System.out.println("Residuo: " + (a % b));
         }
     }
@@ -120,15 +120,15 @@ public class Main {
         System.out.print("Escribe un número decimal (con punto): ");
         double numero = scanner.nextDouble();
 
-        int parteEntera = (int) numero;             // (int) corta los decimales
-        double parteDecimal = numero - parteEntera; // lo que sobra al quitar la parte entera
-        parteDecimal = Math.round(parteDecimal * 1000000) / 1000000.0; // quita errores de precisión
+        int parteEntera = (int) numero;
+        double parteDecimal = numero - parteEntera;
+        parteDecimal = Math.round(parteDecimal * 1000000) / 1000000.0;
 
         System.out.println("Parte entera: " + parteEntera);
         System.out.println("Parte decimal: " + parteDecimal);
     }
 
-    // 7. Nota final con porcentajes (función calcularPromedio)
+    // 7. Nota final con porcentajes
     static void ejercicio7() {
         System.out.println("\n--- Ejercicio 7 ---");
         System.out.print("Nota 1 (15%): ");
@@ -150,7 +150,7 @@ public class Main {
         return n1 * 0.15 + n2 * 0.20 + n3 * 0.15 + n4 * 0.30 + n5 * 0.20;
     }
 
-    // 8. IVA de una venta (función calcularIVA)
+    // 8. IVA de una venta
     static void ejercicio8() {
         System.out.println("\n--- Ejercicio 8 ---");
         System.out.print("Precio bruto: ");
@@ -166,7 +166,7 @@ public class Main {
 
     static double calcularIVA(double precioBruto) {
         double iva = precioBruto * 0.19;
-        return precioBruto + iva; // devuelve el precio con IVA incluido
+        return precioBruto + iva;
     }
 
     // 9. Área y perímetro de un círculo
@@ -236,8 +236,8 @@ public class Main {
         if (n < 0 || n > 9) {
             System.out.println("Eso no es un dígito");
         } else {
-            int nn = n * 11;   // 5 * 11 = 55
-            int nnn = n * 111; // 5 * 111 = 555
+            int nn = n * 11;
+            int nnn = n * 111;
             System.out.println(n);
             System.out.println(nn);
             System.out.println(nnn);
@@ -258,9 +258,7 @@ public class Main {
         System.out.println(horas + ":" + minutos + ":" + seg);
     }
 
-    // =====================================================================
     // PARTE II
-    // =====================================================================
 
     // 15. Par o impar
     static void ejercicio15() {
@@ -291,7 +289,6 @@ public class Main {
     }
 
     // 17. IVA con descuento del 5% si la venta supera 150.000
-    //     (el cálculo del IVA se hace aquí mismo para que el ejercicio sea independiente)
     static void ejercicio17() {
         System.out.println("\n--- Ejercicio 17 ---");
         System.out.print("Precio bruto de la venta: ");
@@ -315,7 +312,6 @@ public class Main {
     }
 
     // 18. Nota final con mensajes
-    //     (la nota final se calcula aquí mismo para que el ejercicio sea independiente)
     static void ejercicio18() {
         System.out.println("\n--- Ejercicio 18 ---");
         System.out.print("Nota 1 (15%): ");
@@ -344,7 +340,7 @@ public class Main {
         }
     }
 
-    // 19. Ecuación cuadrática ax2 + bx + c = 0 (función resolverCuadratica)
+    // 19. Ecuación cuadrática ax2 + bx + c = 0
     static void ejercicio19() {
         System.out.println("\n--- Ejercicio 19 ---");
         System.out.print("Valor de a: ");
@@ -423,7 +419,7 @@ public class Main {
         System.out.println("\n--- Ejercicio 22 ---");
         System.out.print("Escribe un número menor a 100000: ");
         int n = scanner.nextInt();
-        n = Math.abs(n); // por si escriben un negativo
+        n = Math.abs(n);
 
         if (n >= 100000) {
             System.out.println("El número debe ser menor a 100000");
@@ -477,14 +473,12 @@ public class Main {
         }
     }
 
-    // =====================================================================
     // PARTE III
-    // =====================================================================
 
     // 25. Invertir un texto (función invertirTexto)
     static void ejercicio25() {
         System.out.println("\n--- Ejercicio 25 ---");
-        scanner.nextLine(); // limpia el Enter que quedó del ejercicio 24 (bórrala si pruebas este ejercicio solo)
+        scanner.nextLine();
         System.out.print("Escribe un texto: ");
         String texto = scanner.nextLine();
         System.out.println("Texto invertido: " + invertirTexto(texto));
@@ -507,7 +501,7 @@ public class Main {
         String resultado = "";
         for (int i = 0; i < texto.length(); i++) {
             char letra = texto.charAt(i);
-            // es la primera letra del texto, o la letra anterior es un espacio
+
             if (i == 0 || texto.charAt(i - 1) == ' ') {
                 resultado = resultado + Character.toUpperCase(letra);
             } else {
@@ -523,7 +517,7 @@ public class Main {
         System.out.print("Escribe un texto: ");
         String texto = scanner.nextLine();
 
-        String[] palabras = texto.trim().split(" +"); // separa el texto en palabras
+        String[] palabras = texto.trim().split(" +");
         if (palabras.length < 2) {
             System.out.println("El texto necesita al menos 2 palabras");
         } else {
@@ -560,15 +554,14 @@ public class Main {
     }
 
     static boolean esPalindromo(String palabra) {
-        // Se arma la palabra al revés aquí mismo, para que el ejercicio sea independiente
         String alReves = "";
         for (int i = palabra.length() - 1; i >= 0; i--) {
             alReves = alReves + palabra.charAt(i);
         }
-        return palabra.equalsIgnoreCase(alReves); // ignora mayúsculas y minúsculas
+        return palabra.equalsIgnoreCase(alReves);
     }
 
-    // 30. Área de un polígono regular de n lados (función areaPoligonoRegular)
+    // 30. Área de un polígono regular de n lados
     static void ejercicio30() {
         System.out.println("\n--- Ejercicio 30 ---");
         System.out.print("Número de lados del polígono (mínimo 3): ");
@@ -588,9 +581,7 @@ public class Main {
         return (numeroLados * longitudLado * longitudLado) / (4 * Math.tan(Math.PI / numeroLados));
     }
 
-    // =====================================================================
     // PARTE IV
-    // =====================================================================
 
     // 31. Primeros 10 números naturales
     static void ejercicio31() {
@@ -604,7 +595,7 @@ public class Main {
     static void ejercicio32() {
         System.out.println("\n--- Ejercicio 32 ---");
         for (int i = 1; i <= 10; i++) {
-            System.out.println(2 * i - 1); // 1, 3, 5, ... 19
+            System.out.println(2 * i - 1);
         }
     }
 
@@ -644,7 +635,7 @@ public class Main {
         } else {
             String binario = "";
             while (n > 0) {
-                binario = (n % 2) + binario; // el residuo se pega al inicio
+                binario = (n % 2) + binario;
                 n = n / 2;
             }
             System.out.println("Binario: " + binario);
@@ -659,9 +650,9 @@ public class Main {
 
         boolean valido = true;
         int decimal = 0;
-        int potencia = 1; // 1, 2, 4, 8, ...
+        int potencia = 1;
 
-        for (int i = binario.length() - 1; i >= 0; i--) { // de derecha a izquierda
+        for (int i = binario.length() - 1; i >= 0; i--) {
             char c = binario.charAt(i);
             if (c == '1') {
                 decimal = decimal + potencia;
@@ -685,7 +676,7 @@ public class Main {
             for (int numero = 1; numero <= fila; numero++) {
                 System.out.print(numero);
             }
-            System.out.println(); // salto de línea al terminar la fila
+            System.out.println();
         }
     }
 
@@ -717,9 +708,7 @@ public class Main {
         }
     }
 
-    // =====================================================================
     // PROBLEMA FINAL
-    // =====================================================================
 
     // Control de equipaje del Boeing 747
     static void problemaFinal() {
@@ -733,7 +722,7 @@ public class Main {
         int cantidadBultos = 0;
         int pesoTotal = 0;
         int masPesado = 0;
-        int masLiviano = PESO_MAXIMO_BULTO; // ningún bulto aceptado puede pesar más que esto
+        int masLiviano = PESO_MAXIMO_BULTO;
         int ingresoPesos = 0;
         int peso;
 
@@ -749,7 +738,7 @@ public class Main {
                 System.out.println("Rechazado: no cabe en el avión (capacidad restante: "
                         + (CAPACIDAD_AVION - pesoTotal) + " kg)");
             } else if (peso > 0) {
-                // Se calcula la tarifa por kilo según el peso del bulto
+              // tarifa por bulto
                 int tarifa;
                 if (peso <= 25) {
                     tarifa = 0;
@@ -760,7 +749,7 @@ public class Main {
                 }
                 int costo = peso * tarifa;
 
-                // Se actualizan los acumuladores
+             
                 cantidadBultos++;
                 pesoTotal = pesoTotal + peso;
                 ingresoPesos = ingresoPesos + costo;
